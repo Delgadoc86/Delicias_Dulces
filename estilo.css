@@ -1,0 +1,487 @@
+/* Estilos generales */
+body {
+    font-family: "Nunito", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f7f2;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1, h2, h3 {
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Barra de navegación */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #d3afec;
+    padding: 20px;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: #333;
+    font-size: 1em;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* Imagen grande con título y descripción */
+.hero {
+    position: relative;
+    text-align: center;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    max-width: 90%;
+}
+
+.hero-text h1 {
+    font-size: 4em;
+}
+
+.hero-text p {
+    font-size: 2em;
+}
+
+/* Separador */
+.divider {
+    margin: 20px 0;
+    border: none;
+    border-top: 2px solid #dcdcdc;
+}
+
+/* Estilo general para la sección de información */
+.info {
+    padding: 20px;
+    background-color: rgb(252, 230, 230);
+}
+
+/* Contenedor de los elementos */
+.info-content {
+    display: flex;             /* Alinea los elementos en una fila */
+    gap: 20px;                 /* Espacio entre los elementos */
+    overflow-x: auto;         /* Permite el desplazamiento horizontal si es necesario */
+}
+
+/* Estilo para cada div que contiene la imagen y el texto */
+.info-item {
+    position: relative;
+    flex: 1;                  /* Los elementos se expanden para ocupar el espacio disponible */
+    min-width: 200px;         /* Ancho mínimo para evitar que el contenido sea demasiado pequeño */
+    display: flex;
+    flex-direction: column;   /* Apila los elementos internos en columna */
+}
+
+/* Estilo para la imagen */
+.info-image, .info-image-full {
+    width: 100%;              /* La imagen ocupa todo el ancho del contenedor */
+    height: 100%;             /* Mantiene la proporción de la imagen */
+    border-radius: 8px;      /* Bordes redondeados para la imagen */
+    object-fit: cover;        /* Mantiene la proporción de la imagen y cubre el contenedor */
+}
+
+/* Estilo para el texto sobre la imagen */
+.info-text, .info-text-full {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 8px;
+    max-width: calc(100% - 20px); /* Asegura que el texto no se salga del contenedor */
+    box-sizing: border-box; /* Asegura que el padding no cause overflow */
+}
+
+/* Estilo para el texto */
+.info-text h2, .info-text p {
+    margin: 0;
+}
+
+/* Estilo para la imagen de la última tarjeta */
+.info-item:last-child {
+    flex: 2;                 /* Asegura que el último ítem ocupe más espacio en pantallas grandes */
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .info-content {
+        flex-direction: column; /* Cambia la dirección del flujo a columna en pantallas pequeñas */
+    }
+    
+    .info-item {
+        width: 100%;            /* Cada ítem ocupa el ancho completo del contenedor en móviles */
+        position: relative;     /* Asegura que el texto esté sobre la imagen */
+    }
+    
+    .info-image-full {
+        height: 200px;         /* Ajusta la altura de la imagen en móviles */
+    }
+}
+
+
+/* Sección de imágenes en cascada */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 20px;
+    background-color: rgb(252, 234, 234);
+    margin: 0 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box; /* Asegura que el padding no cause overflow */
+}
+
+.gallery-text {
+    flex: 1;
+    margin-bottom: 20px;
+}
+
+.gallery-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%; /* Asegura que se ajuste al contenedor */
+}
+
+.image-group {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.gallery-image {
+    flex: 1 1 calc(33.333% - 10px); /* Ajuste para la galería en escritorio */
+    max-width: calc(33.333% - 10px); /* Ajuste para evitar desbordamiento */
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover; /* Mantiene la proporción de la imagen */
+    box-sizing: border-box; /* Asegura que el padding no cause overflow */
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .gallery {
+        margin: 0;
+        padding: 10px;
+    }
+
+    .gallery-text {
+        margin-bottom: 10px;
+    }
+
+    .gallery-images {
+        flex-direction: column;
+    }
+
+    .image-group {
+        margin-bottom: 10px;
+    }
+
+    .gallery-image {
+        flex: 1 1 100%; /* Ajusta la imagen para que ocupe el ancho completo en móviles */
+        max-width: 100%; /* Ajusta el ancho máximo para evitar desbordamiento */
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-image {
+        /* Opcional: ajuste adicional para pantallas muy pequeñas */
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
+
+/* Sección de servicios */
+.services {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    background-color: rgb(253, 226, 226);
+    margin: 0 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.service-item {
+    flex: 1 1 200px;
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.service-item i {
+    font-size: 2em;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.service-item h3 {
+    font-size: 1.2em;
+}
+
+.service-item p {
+    font-size: 1em;
+    color: #666;
+}
+
+/* Sección de contacto */
+.contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    background-color: rgb(253, 226, 226);
+    margin: 0 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.map {
+    flex: 1;
+}
+
+.contact-form {
+    flex: 1;
+}
+
+.contact-form h2 {
+    margin-top: 0;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    margin: 10px 0 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.contact-form button {
+    padding: 10px;
+    background-color: #f8b1b1;
+    border: none;
+    border-radius: 4px;
+    color: #333;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #d5b9a1;
+    transform: scale(1.05);
+}
+
+/* Footer */
+.footer {
+    background-color: #c7b4fa;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-info {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.social-links a {
+    font-size: 1em;
+    color: #333;
+}
+
+.social-links a:hover {
+    text-decoration: underline;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    .nav-links li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .hero-text {
+        padding: 5px;
+        max-width: 95%;
+    }
+
+    .hero-text h1 {
+        font-size: 1.5em;
+    }
+
+    .hero-text p {
+        font-size: 0.9em;
+    }
+
+    .info {
+        flex-direction: column;
+    }
+
+    .info-item {
+        margin-bottom: 20px;
+        position: relative;
+    }
+
+    .info-image-full {
+        height: 200px; /* Ajuste para limitar la altura en móviles */
+    }
+
+    .gallery {
+        flex-direction: column;
+    }
+
+    .gallery-text {
+        margin-bottom: 20px;
+    }
+
+    .gallery-images {
+        flex-direction: column;
+    }
+
+    .image-group {
+        margin-bottom: 20px;
+    }
+
+    .services {
+        flex-direction: column;
+    }
+
+    .service-item {
+        margin-bottom: 20px;
+    }
+
+    .contact {
+        flex-direction: column;
+    }
+
+    .map iframe {
+        width: 100%;
+        height: auto;
+    }
+
+    .contact-form {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-text h1 {
+        font-size: 1.2em;
+    }
+
+    .hero-text p {
+        font-size: 0.8em;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 0.9em;
+    }
+
+    .contact-form button {
+        font-size: 0.9em;
+    }
+
+    .service-item i {
+        font-size: 1.5em;
+    }
+}
+/* whatsapp */
+/* Estilo para el ícono flotante de WhatsApp */
+.whatsapp-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #17b852; /* Color verde de WhatsApp */
+    color: white;
+    border-radius: 50%; /* Asegura la forma circular */
+    width: 62px; /* Ajusta el ancho */
+    height: 60px; /* Ajusta la altura igual al ancho para mantener el círculo */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 30px; /* Ajusta el tamaño del ícono */
+    text-align: center;
+    line-height: 60px; /* Centra el ícono verticalmente */
+    z-index: 1000; /* Asegura que el ícono esté por encima de otros elementos */
+    transition: background-color 0.3s ease;
+}
+
+.whatsapp-icon:hover {
+    background-color: #128C7E; /* Color verde más oscuro de WhatsApp al pasar el ratón */
+}
+
+/* Icono de WhatsApp */
+.whatsapp-icon i {
+    vertical-align: middle;
+}
