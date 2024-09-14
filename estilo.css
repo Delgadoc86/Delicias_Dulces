@@ -22,36 +22,7 @@ ul {
     padding: 0;
 }
 
-/* Barra de navegación */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #d3afec;
-    padding: 20px;
-}
 
-.logo {
-    font-size: 1.5em;
-    font-weight: bold;
-}
-
-.nav-links {
-    display: flex;
-}
-
-.nav-links li {
-    margin-left: 20px;
-}
-
-.nav-links a {
-    color: #333;
-    font-size: 1em;
-}
-
-.nav-links a:hover {
-    text-decoration: underline;
-}
 
 /* Imagen grande con título y descripción */
 .hero {
@@ -78,11 +49,11 @@ ul {
 }
 
 .hero-text h1 {
-    font-size: 1.2em;
+    font-size: 2em;
 }
 
 .hero-text p {
-    font-size: 2em;
+    font-size: 1.2em;
 }
 
 /* Separador */
@@ -472,7 +443,7 @@ ul {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     font-size: 30px; /* Ajusta el tamaño del ícono */
     text-align: center;
-    line-height: 60px; /* Centra el ícono verticalmente */
+    line-height: 50px; /* Centra el ícono verticalmente */
     z-index: 1000; /* Asegura que el ícono esté por encima de otros elementos */
     transition: background-color 0.3s ease;
 }
